@@ -1,10 +1,4 @@
 module.exports = {
-  trailingComma: 'all',
-  semi: true,
-  printWidth: 120,
-  tabWidth: 2,
-  singleQuote: true,
-  jsxSingleQuote: true,
   importOrder: [
     '^(next/(.*)$)|^(next$)', // Imports by "next"
     'interface',
@@ -15,8 +9,16 @@ module.exports = {
     '^@fontsource/(.*)$',
     '^[./]', // Other imports
   ],
-  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
+  jsxSingleQuote: true,
+  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-sort-json', 'prettier-plugin-tailwindcss'],
+  printWidth: 120,
+  proseWrap: 'always',
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
   tailwindConfig: './tailwind.config.js',
+  tailwindFunctions: ['clsx'],
 };

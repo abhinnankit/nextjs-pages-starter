@@ -4,24 +4,70 @@
     {
       "files": ["**/*.js", "**/*.ts", "**/*.tsx"],
       "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
-        "react/jsx-props-no-spreading": "off",
-        "semi": "error",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+        ],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/prefer-default-export": "off",
         "max-len": [
           "error",
           {
             "code": 120,
             "ignoreStrings": true,
-            "ignorePattern": "class=\"[^\"]*\""
+            "ignoreRegExpLiterals": true,
+            "ignorePattern": "^className=\"[^\"]*\""
           }
-        ]
+        ],
+        "no-console": "error",
+        "no-plusplus": "warn",
+        "no-unused-vars": "off",
+        "no-useless-escape": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
+        "react/jsx-props-no-spreading": "off",
+        "react/require-default-props": [
+          2,
+          {
+            "forbidDefaultForRequired": true,
+            "classes": "defaultProps",
+            "functions": "defaultArguments"
+          }
+        ],
+        "semi": "error"
       }
     },
     {
-      "files": ["tailwind.config.js"],
+      "files": ["tailwind-config-resolver.ts"],
       "rules": {
-        "import/no-extraneous-dependencies": "off"
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["common/types/*.ts"],
+      "rules": {
+        "no-unused-vars": "off"
       }
     }
-  ]
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 }
