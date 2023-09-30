@@ -12,11 +12,6 @@
     "prepare": "husky install",
     "precommit": "lint-staged"
   },
-  "lint-staged": {
-    "*.{html,js,ts,tsx,scss,json}": [
-      "prettier --write"
-    ]
-  },
   "dependencies": {
     "@types/node": "20.7.2",
     "@types/react": "18.2.23",

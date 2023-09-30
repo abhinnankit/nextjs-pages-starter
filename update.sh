@@ -11,7 +11,7 @@ else
 fi
 
 echo -e "Formatting before adding\n"
-nr prettier . -w
+nr precommit
 
 echo -e "Checking lint errors\n"
 nr lint
