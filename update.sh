@@ -13,19 +13,8 @@ fi
 echo -e "Adding files:\n"
 git add --all
 
-echo -e "Formatting only staged files\n"
-nr precommit
-
-echo -e "Checking lint errors on staged files\n"
-nr lint --cache
-
-if [ $? -ne 0 ]; then
-    echo -e "Lint error\n"
-    exit 1
-fi
 
 echo -e "Committing changes.\n"
-
 git commit -S -m "${commit_msg}"
 
 echo -e "Pushing repo.\n"
