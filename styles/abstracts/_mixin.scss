@@ -1,0 +1,29 @@
+// Contains all the functions
+@mixin col-common {
+  position: relative;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@mixin generate-col($value) {
+  @for $i from 1 through 12 {
+    .col#{$value}-#{$i} {
+      flex: 0 0 ($i/12) * 100%;
+      max-width: ($i/12) * 100%;
+      @include col-common;
+    }
+  }
+}
+
+@mixin screen_min_width($val) {
+  @media only screen and (min-width: $val) {
+    @content;
+  }
+}
+
+@mixin screen_max_width($val) {
+  @media not all and (min-width: $val) {
+    @content;
+  }
+}

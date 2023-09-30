@@ -1,0 +1,42 @@
+@use 'abstracts' as *;
+@use 'tailwind' as *;
+
+@layer components {
+  .col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include generate-col(null);
+
+  @include screen_min_width(480px) {
+    @include generate-col('-xs');
+  }
+
+  @include screen_min_width(640px) {
+    @include generate-col('-sm');
+  }
+
+  @include screen_min_width(768px) {
+    @include generate-col('-md');
+  }
+
+  @include screen_min_width(1024px) {
+    @include generate-col('-lg');
+  }
+
+  @include screen_min_width(1280px) {
+    @include generate-col('-xl');
+  }
+
+  @include screen_min_width(1536px) {
+    @include generate-col('-2xl');
+  }
+}
