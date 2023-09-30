@@ -27,8 +27,8 @@ Install the following extensions to get the best development experience in [VSCo
 - [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
 
-Paste the following in settings.json[^1]: [^1]: Open command pallette _(cmd+shift+p)_ Type/Paste:
-`Preferences: Open User Settings (JSON)`
+Paste the following in settings.json: [^1] [^1]: Open command pallette _(cmd+shift+p)_ Type/Paste:
+`Preferences: Open User/Workspace Settings (JSON)`
 
 ```json
 "typescript.updateImportsOnFileMove.enabled": "always",
@@ -62,7 +62,7 @@ Paste the following in settings.json[^1]: [^1]: Open command pallette _(cmd+shif
 "files.associations": {
   "*.tsx": "typescriptreact",
   "*.jsx": "javascriptreact",
-  "*.scss": "postcss"
+  "*.scss": "scss"
 },
 "[typescriptreact]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -80,3 +80,7 @@ Paste the following in settings.json[^1]: [^1]: Open command pallette _(cmd+shif
   ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
 ]
 ```
+
+### FAQ
+
+Fix uppercase path issues with github `git config --global core.ignorecase false`
