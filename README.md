@@ -27,9 +27,9 @@ Install the following extensions to get the best development experience in [VSCo
 - [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
 
-Paste the following in settings.json: [^1]
+Paste the following in settings.json[^1]:
 
-[^1]: Open command pallette _(cmd+shift+p)_ Type/Paste: `Preferences: Open User/Workspace Settings (JSON)`
+[^1]: Open command pallette _(cmd+shift+p)_ Type/Paste: `Preferences: Open User Settings (JSON)`
 
 ```json
 "typescript.updateImportsOnFileMove.enabled": "always",
@@ -63,7 +63,7 @@ Paste the following in settings.json: [^1]
 "files.associations": {
   "*.tsx": "typescriptreact",
   "*.jsx": "javascriptreact",
-  "*.scss": "scss"
+  "*.scss": "postcss"
 },
 "[typescriptreact]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -74,14 +74,16 @@ Paste the following in settings.json: [^1]
 "editor.quickSuggestions": {
   "strings": "on"
 },
+"tailwindCSS.emmetCompletions": true,
+"tailwindCSS.experimental.classRegex": [
+  ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+  ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
+],
 "tailwindCSS.includeLanguages": {
   "plaintext": "html"
 },
-"tailwindCSS.experimental.classRegex": [
-  ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-]
 ```
 
-### FAQ
+### Issues and Fixes
 
-Fix uppercase path issues with github `git config --global core.ignorecase false`
+Fix uppercase path issues with git `git config --global core.ignorecase false`
