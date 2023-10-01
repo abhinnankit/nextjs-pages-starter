@@ -77,7 +77,7 @@ Paste the following in settings.json [^1]:
 "tailwindCSS.emmetCompletions": true,
 "tailwindCSS.experimental.classRegex": [
   ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
-  ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
+  ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
 ],
 "tailwindCSS.includeLanguages": {
   "plaintext": "html"
