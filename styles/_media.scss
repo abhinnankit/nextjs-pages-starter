@@ -15,28 +15,12 @@
   }
 
   @include generate-col(null);
+  @include generate-offset(null);
 
-  @include screen_min_width(480px) {
-    @include generate-col('-xs');
-  }
-
-  @include screen_min_width(640px) {
-    @include generate-col('-sm');
-  }
-
-  @include screen_min_width(768px) {
-    @include generate-col('-md');
-  }
-
-  @include screen_min_width(1024px) {
-    @include generate-col('-lg');
-  }
-
-  @include screen_min_width(1280px) {
-    @include generate-col('-xl');
-  }
-
-  @include screen_min_width(1536px) {
-    @include generate-col('-2xl');
+  @each $breakpoint, $suffix in $breakpoints {
+    @include screen_min_width($breakpoint) {
+      @include generate-col($suffix);
+      @include generate-offset($suffix);
+    }
   }
 }

@@ -32,8 +32,6 @@ Paste the following in settings.json [^1]:
 [^1]: Open command pallette _(cmd+shift+p)_ Type/Paste: `Preferences: Open User/Workspace Settings (JSON)`
 
 ```json
-"typescript.updateImportsOnFileMove.enabled": "always",
-"javascript.updateImportsOnFileMove.enabled": "always",
 "[javascriptreact]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
@@ -63,7 +61,8 @@ Paste the following in settings.json [^1]:
 "files.associations": {
   "*.tsx": "typescriptreact",
   "*.jsx": "javascriptreact",
-  "*.scss": "postcss"
+  "*.scss": "scss",
+  "*.css": "tailwindcss"
 },
 "[typescriptreact]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -74,14 +73,21 @@ Paste the following in settings.json [^1]:
 "editor.quickSuggestions": {
   "strings": "on"
 },
+"javascript.updateImportsOnFileMove.enabled": "always",
+"tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Styles*", ".*Color", ".*Classes"],
 "tailwindCSS.emmetCompletions": true,
 "tailwindCSS.experimental.classRegex": [
-  ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
-  ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
+  "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
+  "@tw\\s\\*/\\s+[\"'`]([^\"'`]*)",
+  ["clsx\\(([^]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+  ["cn\\(([^]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+  ["classList.(?:add|remove)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+  ["(?:twMerge|twJoin)\\(([^\\);]*)[\\);]", "[`'\"`]([^'\"`,;]*)[`'\"`]"]
 ],
 "tailwindCSS.includeLanguages": {
   "plaintext": "html"
 },
+"typescript.updateImportsOnFileMove.enabled": "always",
 ```
 
 ### Issues and Fixes

@@ -20,5 +20,5 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'all',
   tailwindConfig: './tailwind.config.js',
-  tailwindFunctions: ['clsx'],
+  tailwindFunctions: ['clsx', 'cn'],
 };
