@@ -1,20 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  darkMode: 'class', // or 'media' or 'class'
+  relative: true,
+  content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    screens: {
-      ...defaultTheme.screens,
-      xxs: { max: '474px' },
-      xs: '475px',
+    extend: {
+      screens: {
+        xs: '480px',
+      },
+      colors: {
+        'grey-olive': '#AEAD9A',
+        'warm-grey': '#8F9090',
+        'milk-white': '#FEFCF8',
+        gravel: '#484848',
+      },
+      container: {
+        center: true,
+        padding: '1rem',
+      },
     },
-    extend: {},
   },
   plugins: [],
 };

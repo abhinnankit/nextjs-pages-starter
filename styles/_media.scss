@@ -1,0 +1,26 @@
+@use 'abstracts' as *;
+@use 'tailwind' as *;
+
+@layer components {
+  .col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include generate-col(null);
+  @include generate-offset(null);
+
+  @each $breakpoint, $suffix in $breakpoints {
+    @include screen_min_width($breakpoint) {
+      @include generate-col($suffix);
+      @include generate-offset($suffix);
+    }
+  }
+}
