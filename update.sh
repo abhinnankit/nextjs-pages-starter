@@ -34,5 +34,5 @@ git commit -S -m "${commit_msg}"
 
 echo -e "Pushing repo.\n"
 
-branch_name=$(git branch | grep \* | cut -d ' ' -f2)
+branch_name=$(git branch | grep \* | cut -d ' ' -f 2)
 git push origin "${branch_name}"
